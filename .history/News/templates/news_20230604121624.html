@@ -3,6 +3,11 @@
  
 {% load custom_filters %} <!-- не забываем заранее загружать наши фильтры! -->
 
+{% load cache %} <!-- Загружаем кэширование -->
+    {% cache 60 header %} <!-- Кэшируем отдельный блок на 30 секунд -->
+        {% block header %}
+        {% endblock header %}
+{% endcache %}
 
 <!-- Название NEWS -->
 {% block title %}
